@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE emp-list SYSTEM "emp-list.dtd">
+
+<emp-list>
+    <emp>
+        <empId>111</empId>
+        <empNm>홍길동</empNm>
+        <salary>4000</salary>
+    </emp>
+    <emp>
+        <empId>222</empId>
+        <empNm>이길동</empNm>
+        <salary>5000</salary>
+    </emp>
+    <emp>
+        <empId>333</empId>
+        <empNm>박길동</empNm>
+        <salary>6000</salary>
+    </emp>
+    <emp>
+        <empId>444</empId>
+        <empNm>표길동</empNm>
+        <salary>7000</salary>
+    </emp>
+    <emp>
+        <empId>555</empId>
+        <empNm>사길동</empNm>
+        <salary>8000</salary>
+    </emp>
+</emp-list>

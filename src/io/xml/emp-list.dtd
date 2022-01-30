@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT emp-list (emp*)>
+<!ELEMENT emp (empId,empNm,salary)>
+<!ELEMENT empId (#PCDATA)>
+<!ELEMENT empNm (#PCDATA)>
+<!ELEMENT salary (#PCDATA)>
