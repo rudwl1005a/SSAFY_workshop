@@ -19,7 +19,7 @@ public class BJ_02493_탑 {
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		for(int i=1; i<=N; i++) {
 			isPop = false;
-			if(stack.empty()) { // stack이 비었으면 처음 넣었거나 가장 큰 수
+			if(stack.empty()) { // stack이 비었으면 처음 넣은 수
 				answer[i] = 0;
 				stack.push(Integer.parseInt(st.nextToken()));
 				index = 1;
