@@ -5,7 +5,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-//실행시간 : 1,072 ms, 메모리 : 24,076 kb
+// 부분집합
+// 실행시간 : 1,072 ms, 메모리 : 24,076 kb
 public class SW_05215_햄버거다이어트 {
 	
 	static class Burger {

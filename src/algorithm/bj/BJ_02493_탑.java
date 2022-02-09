@@ -5,6 +5,8 @@ import java.io.InputStreamReader;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
+// StringBuilder 안썼을때, 메모리: 122,100KB, 속도: 2980ms
+// StringBuilder 썼을때, 메모리: 80,528KB, 속도: 696ms
 public class BJ_02493_탑 {
 	
 	static int N, index;
@@ -49,9 +51,12 @@ public class BJ_02493_탑 {
 		}
 		
 		// 출력
+		StringBuilder sb = new StringBuilder();
 		for(int i=1; i<=N; i++) {
-			System.out.print(answer[i] + " ");
+			sb.append(answer[i]).append(" ");
+//			System.out.print(answer[i] + " ");
 		}
+		System.out.println(sb);
 		
 	}
 	
