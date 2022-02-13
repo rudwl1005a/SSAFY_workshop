@@ -42,7 +42,6 @@ public class BJ_16926_배열돌리기1_T {
 			System.out.println();
 		}
 		
-		
 	}
 
 	static void rotate() {
