@@ -10,17 +10,14 @@ import java.util.StringTokenizer;
  */
 public class BJ_15683_감시_T {
 
-	static int N, M, min, ans;
+	static int N, M, min;
 	static int[][] map;
 	static ArrayList<Cam> list = new ArrayList<>();
 
-	static int[] dy = { -1, 0, 1, 0 }; // 상 좌 하 우
-	static int[] dx = { 0, -1, 0, 1 };
-
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
 		StringTokenizer st = new StringTokenizer(br.readLine());
+
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
 		map = new int[N][M];
@@ -30,34 +27,32 @@ public class BJ_15683_감시_T {
 			for (int j = 0; j < M; j++) {
 				int n = Integer.parseInt(st.nextToken());
 				map[i][j] = n;
-				if (n >= 1 && n <= 5) {
+				if (n >= 1 && n <= 5)
 					list.add(new Cam(i, j, n));
-				}
 			}
 		}
 
 		min = Integer.MAX_VALUE;
 
-		dfs(0, map); // 첫번째 Cam사용, 최초의 map 전달
-		
-		System.out.println(min);
+		dfs(0, map); // 첫 번째 Cam 사용, 최조 map 전달
 
+		System.out.println(min);
 	}
 
-	private static void dfs(int idx, int[][] parent) {
-
-		// 기저조건 : 모든 캠의 비추는 상태를 반영한 parent
+	static void dfs(int idx, int[][] parent) {
+		// 기저조건
+		// 모든 캠의 비추는 상태를 반영한 parent
 		if (idx == list.size()) {
 			// complete code
-			// parent에서 사각지대(0) 계산 -> min 비교 처리
+			// parent 에서 사각지대(0) 계산 => min 비교 처리
 			int cnt = 0;
 			for (int i = 0; i < N; i++) {
 				for (int j = 0; j < M; j++) {
-					if(parent[i][j] == 0) {
+					if (parent[i][j] == 0)
 						cnt++;
-					}
 				}
 			}
+
 			min = Math.min(min, cnt);
 			return;
 		}
@@ -65,7 +60,7 @@ public class BJ_15683_감시_T {
 		Cam c = list.get(idx);
 
 		switch (c.n) {
-		case 1: // 캠의 현재 y,x 에서 한 방향 x 4
+		case 1: // 캠의 현재 y,x 에서 한 방향 X 4
 			for (int d = 0; d < 4; d++) {
 				int[][] child = copyMap(parent);
 				// 비추는 작업
@@ -110,6 +105,7 @@ public class BJ_15683_감시_T {
 			watch(c.y, c.x, 3, child);
 			dfs(idx + 1, child);
 			break;
+
 		}
 	}
 
@@ -118,33 +114,29 @@ public class BJ_15683_감시_T {
 		switch (dir) {
 		case 0: // 좌
 			for (int i = x; i >= 0; i--) {
-				if (array[y][i] == 6) {
+				if (array[y][i] == 6)
 					break;
-				}
 				array[y][i] = 9;
 			}
 			break;
 		case 1: // 상
 			for (int i = y; i >= 0; i--) {
-				if (array[i][x] == 6) {
+				if (array[i][x] == 6)
 					break;
-				}
 				array[i][x] = 9;
 			}
 			break;
 		case 2: // 우
-			for (int i = x; i < N; i++) {
-				if (array[y][i] == 6) {
+			for (int i = x; i < M; i++) {
+				if (array[y][i] == 6)
 					break;
-				}
 				array[y][i] = 9;
 			}
 			break;
 		case 3: // 하
 			for (int i = y; i < N; i++) {
-				if (array[i][x] == 6) {
+				if (array[i][x] == 6)
 					break;
-				}
 				array[i][x] = 9;
 			}
 			break;
@@ -152,9 +144,7 @@ public class BJ_15683_감시_T {
 	}
 
 	static int[][] copyMap(int[][] origin) {
-
 		int[][] copy = new int[N][M];
-
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < M; j++) {
 				copy[i][j] = origin[i][j];
@@ -162,17 +152,17 @@ public class BJ_15683_감시_T {
 		}
 
 		return copy;
-
 	}
 
 	static class Cam {
-		int y, x, n;
+		int y;
+		int x;
+		int n;
 
 		public Cam(int y, int x, int n) {
 			this.y = y;
 			this.x = x;
 			this.n = n;
 		}
-
 	}
 }
