@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Queue;
 
-public class BJ_02267_단지번호붙이기_T_BFS {
+public class BJ_02667_단지번호붙이기_T_BFS {
 	
 	static char[][] map;
 	static int N, cnt;

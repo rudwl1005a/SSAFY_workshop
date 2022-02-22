@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BJ_02267_단지번호붙이기 {
+public class BJ_02667_단지번호붙이기 {
 	
 	static int N, apartNum = 0;
 	static char[][] apart;
