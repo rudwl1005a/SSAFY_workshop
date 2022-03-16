@@ -50,7 +50,7 @@ GROUP BY IndepYear
 HAVING count(IndepYear) >= 10;
 
 -- 8.
-SELECT continent, name, gnp, avg(gnp) '전세계 평균', AVG(gnp) OVER ( PARTITION BY continent ) '대륙 평균'
+SELECT continent, name, gnp, avg(gnp) OVER ( PARTITION BY '*' ) '전세계 평균', AVG(gnp) OVER ( PARTITION BY continent ) '대륙 평균'
 FROM country
 GROUP BY continent, name
 ORDER BY continent, name;
