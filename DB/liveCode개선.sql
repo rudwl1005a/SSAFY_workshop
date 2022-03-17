@@ -24,4 +24,4 @@ select
     max( case when department_id = 90 then salary else null  end ) max90, -- else 인 경우, 0 으로
     min( case when department_id = 90 then salary else null  end ) min90
 from 
-( select department_id, salary from employees where department_id in ( 50, 60, 90, 90 ) ) sub;
+( select department_id, salary from employees where department_id in ( 50, 60, 90 ) ) sub;
